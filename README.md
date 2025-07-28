@@ -64,8 +64,6 @@ Follows MVVM (Model-View-ViewModel) for a clean separation of concerns and high 
 
 ## 📸 Screenshots
 
-<!--
-Add screenshots here to demonstrate product detail, image gallery, and error/loading states.
--->
-
----
+| Product Display                                                                                         | Zoom Image                                                                                            | 🌐 Landscape Mode                                                                                                     |
+| ----------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| ![Product Display]([https://github.com/Deepak-4551819/](https://github.com/Deepak-4551819/Product_display/blob/6e311f7257a5172ce7eb72cd7d61efce6ddb8bc5/Screenshot/ProductDisplayScreen.jpg)) | ![Zoom Image]([https://github.com/Deepak-4551819/](https://github.com/Deepak-4551819/Product_display/blob/6e311f7257a5172ce7eb72cd7d61efce6ddb8bc5/Screenshot/ZoomImage.jpg)) | ![Error massage]([https://github.com/Deepak-4551819/](https://github.com/Deepak-4551819/Product_display/blob/6e311f7257a5172ce7eb72cd7d61efce6ddb8bc5/Screenshot/Error%20massage.jpg)) |

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".ProductDetailActivity">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/errorTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4"
+        tools:text="Failed to load product details. Please try again."
+        tools:visibility="visible" />
+
+    <ScrollView
+        android:id="@+id/contentScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/productImageViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:clipToPadding="false"
+                app:layout_constraintDimensionRatio="H,1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:background="@android:color/transparent" />
+
+            <ImageButton
+                android:id="@+id/arrowLeftButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_left"
+            app:tint="@android:color/black"
+            android:contentDescription="@string/previous_image"
+            app:layout_constraintStart_toStartOf="@id/productImageViewPager"
+            app:layout_constraintTop_toTopOf="@id/productImageViewPager"
+            app:layout_constraintBottom_toBottomOf="@id/productImageViewPager"
+            android:layout_marginStart="8dp" />
+
+            <ImageButton
+                android:id="@+id/arrowRightButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_arrow_right"
+                app:tint="@android:color/black"
+                android:contentDescription="@string/next_image"
+                app:layout_constraintEnd_toEndOf="@id/productImageViewPager"
+                app:layout_constraintTop_toTopOf="@id/productImageViewPager"
+                app:layout_constraintBottom_toBottomOf="@id/productImageViewPager"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/productNameTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:textColor="@android:color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/productImageViewPager"
+                tools:text="@string/anesthesia_once_collection_weekly" />
+
+            <TextView
+                android:id="@+id/productPriceTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/productNameTextView"
+                tools:text="3.5000 KWD" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/productInfoExpandableHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/productPriceTextView">
+
+                <TextView
+                    android:id="@+id/productInfoTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/product_information"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/productInfoArrow"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/productInfoArrow"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="@string/expand_collapse_details"
+                    android:src="@drawable/ic_arrow_down"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/productDescriptionTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="16sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/productInfoExpandableHeader"
+                tools:text="Your long product details content goes here..." />
+
+            <Space
+                android:id="@+id/space"
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/productDescriptionTextView" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomButtonsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:elevation="8dp"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addToBagButton"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="@string/add_to_bag"
+            android:textColor="@android:color/white"
+            app:backgroundTint="@android:color/black" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="8dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/shareButton"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="@string/share"
+            android:textColor="@android:color/black"
+            app:backgroundTint="@android:color/white" app:strokeColor="@android:color/black"   app:strokeWidth="1dp"                    app:layout_constraintTop_toBottomOf="@id/addToBagButton" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

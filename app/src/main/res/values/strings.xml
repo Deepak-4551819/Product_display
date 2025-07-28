@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Product display</string>
+    <string name="welcome_to_product_display_app">Welcome to Product Display App!</string>
+    <string name="view_product_details">View Product Details</string>
+    <string name="product_description">Product Description:</string>
+    <string name="product_image">Product Image</string>
+    <string name="anesthesia_once_collection_weekly">Anesthesia Once Collection Weekly</string>
+    <string name="product_image_gallery">Product Image Gallery</string>
+    <string name="product_thumbnail">Product thumbnail image</string>
+    <string name="share">Share</string>
+    <string name="add_to_bag">Add to bag</string>
+    <string name="product_information">Product Information</string>
+    <string name="expand_collapse_details">Expand/Collapse Product Details</string>
+    <string name="previous_image">Previous Image</string>
+    <string name="next_image">Next Image</string>
+    <string name="product_price">%s KWD</string>
+</resources>
